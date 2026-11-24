@@ -8,6 +8,8 @@ Minos is an interview scoring platform for the Data branch at Generate Northeast
 - `apps/api`: FastAPI, the only thing that touches the database.
 - `docs/specs`: behavior specs. The source of truth for what the app does.
 - `docs/decisions`: decision records, such as the stack choice.
+- `docs/design`: link to the wireframes.
+- `docs/ROADMAP.md`: the build steps, one commit each.
 - `templates`: interview templates (JSON).
 
 Some of these folders do not exist yet. They are added by the roadmap steps.
