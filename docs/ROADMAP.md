@@ -6,6 +6,7 @@ Already done: repo setup, specs, the Socratic tutor skill, and the API skeleton.
 
 - Web app skeleton (Next.js, Tailwind, shadcn/ui, Vitest)
 - CI for the API and the web app
+  - Pin Node 24 LTS in the repo (`.nvmrc` plus an `engines` field) and use the same version in CI.
 
 ## Next
 
@@ -19,6 +20,7 @@ Already done: repo setup, specs, the Socratic tutor skill, and the API skeleton.
 ## Later
 
 - Interviewer console
+  - Switch fonts to Newsreader, Public Sans and IBM Plex Mono per the UI spec, and remove Geist.
 - Debrief scorecard
 - Accounts and invites
 - Live shared whiteboard
@@ -30,5 +32,4 @@ Already done: repo setup, specs, the Socratic tutor skill, and the API skeleton.
 - Where to host the API. It must support WebSockets and not sleep during an interview.
 - Neon for Postgres: leaning yes, confirm before setting it up.
 - The "what this candidate does well" line: proposed, confirm before building.
-- Fonts: confirm Newsreader, Public Sans and IBM Plex Mono before adding them.
 - TL template placeholders: the PR review checklist items and the Part 2 feature.
