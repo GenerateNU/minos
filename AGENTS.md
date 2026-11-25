@@ -54,6 +54,7 @@ This Next.js version may differ from what you know. Read the guides in `apps/web
 ## Git
 
 - Never force push, rewrite history or push to main without asking first.
+- PR descriptions use the template in .github and never include a 'Generated with' line or any AI attribution. Commits have no Co-Authored-By trailer.
 
 ## Testing
 
