@@ -10,6 +10,69 @@ Pydantic models are the source of truth. JSON Schema is exported from them.
 - **Criterion**: id, title, anchors (one description per scale level, all required), scope (a section id or `overall`).
 - **Red flag**: id, text, optional section_id. If set, section_id must name a real section.
 
+## Shape
+
+How the template looks in its JSON file:
+
+- `scale` is a list of levels, each with `value` and `label`. Leave it out to get the default.
+- `formats` maps a format name to its `total_minutes`.
+- A section's `minutes` maps each format name to that section's minutes.
+- A criterion's `anchors` maps each scale value to its description. JSON keys are strings, so level 1 is `"1"`.
+- `hints`, `items`, `criterion_ids`, `materials` and `red_flags` can be left out and default to empty lists.
+
+A small example with one section:
+
+```json
+{
+  "id": "example",
+  "name": "Example interview",
+  "version": 1,
+  "scale": [
+    {"value": 1, "label": "Not yet"},
+    {"value": 2, "label": "Meets"},
+    {"value": 3, "label": "Strong"}
+  ],
+  "formats": {
+    "75": {"total_minutes": 75},
+    "90": {"total_minutes": 90}
+  },
+  "sections": [
+    {
+      "id": "sql",
+      "title": "SQL",
+      "type": "whiteboard",
+      "minutes": {"75": 75, "90": 90},
+      "prompt": "Find the top customer in each region.",
+      "hints": ["Start with a GROUP BY."],
+      "criterion_ids": ["query-design"],
+      "materials": [
+        {
+          "kind": "code",
+          "label": "Starter query",
+          "content": "SELECT * FROM orders;",
+          "audience": "candidate"
+        }
+      ]
+    }
+  ],
+  "criteria": [
+    {
+      "id": "query-design",
+      "title": "Query design",
+      "anchors": {
+        "1": "Can't get a working query",
+        "2": "Correct query with a GROUP BY",
+        "3": "Correct, explains the tradeoffs and edge cases"
+      },
+      "scope": "sql"
+    }
+  ],
+  "red_flags": [
+    {"id": "guesses", "text": "Guesses instead of saying not sure", "section_id": "sql"}
+  ]
+}
+```
+
 ## Validation
 
 Validation fails at load and in CI.
