@@ -24,6 +24,17 @@ API, run from `apps/api`:
 - Lint and format: `uv run ruff check .` and `uv run ruff format .`
 - Type check: `uv run mypy app tests`
 
+Web, run from `apps/web` (pnpm comes from Corepack):
+
+- Install: `pnpm install`
+- Run: `pnpm dev`
+- Test: `pnpm test`
+- Lint: `pnpm lint`
+- Type check: `pnpm typecheck`
+- Build: `pnpm build`
+
+This Next.js version may differ from what you know. Read the guides in `apps/web/node_modules/next/dist/docs/` before writing web code.
+
 ## Working rules
 
 1. Spec first. Behavior lives in docs/specs. If it is not in a spec, ask or write the spec before coding.

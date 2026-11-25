@@ -26,6 +26,8 @@ next-env.d.ts
 npm-debug.log*
 pnpm-debug.log*
 coverage/
+.vercel/
+*.pem
 
 # Playwright
 test-results/
