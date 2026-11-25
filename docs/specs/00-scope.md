@@ -13,7 +13,7 @@ Leaders rotate every semester, so optimize for readable, lean, easily maintained
 - Load and validate templates.
 - Interviewer console: part timer for 75 or 90 min, hint cards revealed in order, notes, 1 to 3 score per criterion with a required one line evidence field, red flag toggles, recording link.
 - One interviewer per session.
-- Debrief scorecard per candidate: levels with evidence, total and band, red flags, what they did well, recording link, Chief decision.
+- Debrief scorecard per candidate: levels with evidence, total, red flags, what they did well, recording link, Chief decision.
 - Candidate list per cycle with comparison across candidates and CSV export.
 - Live shared whiteboard.
 - Accounts created from invite links. Candidates use a link with no account.

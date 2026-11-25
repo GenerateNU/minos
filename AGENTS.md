@@ -43,7 +43,7 @@ This Next.js version may differ from what you know. Read the guides in `apps/web
 ## Working rules
 
 1. Spec first. Behavior lives in docs/specs. If it is not in a spec, ask or write the spec before coding.
-2. Tests first for domain logic (scoring, bands, template validation, authorization, session state). The human reviews tests before implementation.
+2. Tests first for domain logic (scoring, template validation, authorization, session state). The human reviews tests before implementation.
 3. Small slices, reviewable in 10 minutes. One commit per step.
 4. Lean: no new dependency without asking, no abstraction until two real uses, delete dead code.
 5. Authorization lives in one policy module in the API, with tests. Only the API touches the database.
