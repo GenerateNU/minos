@@ -11,7 +11,7 @@ Interviewers run a live interview from a template (timed parts, hints, rubric), 
 - `docs/specs`: what the app does
 - `docs/decisions`: why it is built this way
 - `docs/design`: wireframes
-- `docs/ROADMAP.md`: build steps
+- `docs/ROADMAP.md`: what's now, next and later
 - `templates`: interview templates
 
 The apps and docs are added step by step. Setup instructions arrive with each scaffold.
