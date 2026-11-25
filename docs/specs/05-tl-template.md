@@ -2,11 +2,11 @@
 
 The first template. Roadmap step 9 turns this into `templates/tl-interview.json`, validated against [spec 01](01-template-schema.md). Items marked placeholder or TBD are still open.
 
-## Formats, scale and bands
+## Formats and scale
 
 - Formats: 75 and 90 minutes.
 - Scale: 1 to 3.
-- Bands for 7 criteria (range 7 to 21), starting values to tune after the pilot: Not yet from 7, Maybe from 13, Strong from 17.
+- 7 criteria, so totals range from 7 to 21.
 
 ## Sections
 

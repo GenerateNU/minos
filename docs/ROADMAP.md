@@ -9,7 +9,7 @@ Already done: repo setup, specs, the Socratic tutor skill, the API and web app s
 ## Next
 
 - Template validation, tests first, then the TL template
-- Scoring and bands, tests first
+- Scoring (adding up levels), tests first
 - Score visibility rules, tests first
 - Sessions, scores and events in the API, with the generated TypeScript client
 - A throwaway spike of the live whiteboard relay, kept out of main
@@ -23,6 +23,7 @@ Already done: repo setup, specs, the Socratic tutor skill, the API and web app s
 - Live shared whiteboard
 - Candidate list, CSV export and score distribution
 - Project skills for writing specs and templates
+- Bands (labels for score totals), once we have real totals from interviews
 
 ## Open questions
 

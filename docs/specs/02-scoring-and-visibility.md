@@ -4,12 +4,12 @@
 
 - One interviewer per session. There is no averaging and no per criterion agreement check.
 - The interviewer scores each criterion. A non empty evidence line is required.
-- Total is the sum of the levels. Band is the band with the highest `min_total` that is less than or equal to the total.
+- Total is the sum of the levels. There are no bands in v1. We will decide what totals mean after the first interviews.
 
 ## Red flags and decision
 
-- The interviewer can toggle a red flag with a note. A session with any red flag shows "Needs discussion" instead of a band.
-- The final decision (Strong, Maybe, Not yet) is entered by a Chief with a short rationale, separate from the computed band.
+- The interviewer can toggle a red flag with a note. A session with any red flag shows "Needs discussion" next to its total.
+- The final decision (Strong, Maybe, Not yet) is entered by a Chief with a short rationale, separate from the total.
 
 ## Visibility
 
