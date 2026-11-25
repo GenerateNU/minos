@@ -2,7 +2,7 @@
 # Host port 5433, so it does not clash with another Postgres on 5432.
 services:
   db:
-    image: postgres:17-alpine
+    image: postgres:18-alpine
     environment:
       POSTGRES_USER: minos
       POSTGRES_PASSWORD: minos
@@ -10,7 +10,7 @@ services:
     ports:
       - "127.0.0.1:5433:5432"
     volumes:
-      - db-data:/var/lib/postgresql/data
+      - db-data:/var/lib/postgresql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U minos -d minos"]
       interval: 2s
