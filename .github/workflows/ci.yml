@@ -14,6 +14,23 @@ jobs:
     defaults:
       run:
         working-directory: apps/api
+    # Same Postgres as docker-compose.yml, so migrations are checked on every PR.
+    services:
+      db:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: minos
+          POSTGRES_PASSWORD: minos
+          POSTGRES_DB: minos
+        ports:
+          - 5433:5432
+        options: >-
+          --health-cmd "pg_isready -U minos -d minos"
+          --health-interval 2s
+          --health-timeout 5s
+          --health-retries 15
+    env:
+      DATABASE_URL: postgresql+psycopg://minos:minos@localhost:5433/minos
     steps:
       - uses: actions/checkout@v4
       # Reads the Python version from apps/api/.python-version.
@@ -24,6 +41,7 @@ jobs:
       - run: uv run ruff check .
       - run: uv run ruff format --check .
       - run: uv run mypy app tests
+      - run: uv run alembic upgrade head
       - run: uv run pytest
 
   web:
