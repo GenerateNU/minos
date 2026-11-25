@@ -1,12 +1,10 @@
 # Roadmap
 
-Already done: repo setup, specs, the Socratic tutor skill, and the API skeleton.
+Already done: repo setup, specs, the Socratic tutor skill, the API skeleton, and CI for the API and the web app.
 
 ## Now
 
 - Web app skeleton (Next.js, Tailwind, shadcn/ui, Vitest)
-- CI for the API and the web app
-  - Pin Node 24 LTS in the repo (`.nvmrc` plus an `engines` field) and use the same version in CI.
 
 ## Next
 
