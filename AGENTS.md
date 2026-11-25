@@ -14,6 +14,16 @@ Minos is an interview scoring platform for the Data branch at Generate Northeast
 
 Some of these folders do not exist yet. They are added by the roadmap steps.
 
+## Commands
+
+API, run from `apps/api`:
+
+- Install: `uv sync`
+- Run: `uv run uvicorn app.main:app --reload`
+- Test: `uv run pytest`
+- Lint and format: `uv run ruff check .` and `uv run ruff format .`
+- Type check: `uv run mypy app tests`
+
 ## Working rules
 
 1. Spec first. Behavior lives in docs/specs. If it is not in a spec, ask or write the spec before coding.
@@ -29,6 +39,12 @@ Some of these folders do not exist yet. They are added by the roadmap steps.
 11. Deviating from these rules is allowed, but record why in docs/decisions.
 12. Prefer a rough working version first, then improve it. Spike risky parts early and throw the spike away.
 13. Ask before guessing. Be specific in specs, comments and commit messages.
+
+## Testing
+
+- Before writing tests, show the human a plain-English list of cases and wait for approval.
+- During a feat step, never edit tests. If a test looks wrong, stop and ask.
+- After implementing, flip one condition and confirm a test fails, then revert.
 
 ## Definition of done
 
