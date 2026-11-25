@@ -8,10 +8,17 @@ class Base(DeclarativeBase):
 
 
 def database_url() -> str:
-    """Return DATABASE_URL, or fail loudly if it is missing.
+    """Read the database URL from the environment.
 
-    Locally it points at Docker Postgres (see .env.example). In deployment it
-    is the Neon connection string with the scheme set to postgresql+psycopg://.
+    Locally it points at Docker Postgres or the Neon dev branch (see
+    .env.example). In deployment it is the Neon connection string with the
+    scheme set to postgresql+psycopg://.
+
+    Returns:
+        The value of DATABASE_URL.
+
+    Raises:
+        RuntimeError: If DATABASE_URL is not set.
     """
     url = os.environ.get("DATABASE_URL")
     if not url:

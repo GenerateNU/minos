@@ -48,7 +48,7 @@ This Next.js version may differ from what you know. Read the guides in `apps/web
 4. Lean: no new dependency without asking, no abstraction until two real uses, delete dead code.
 5. Authorization lives in one policy module in the API, with tests. Only the API touches the database.
 6. Never swallow errors. No secrets in the repo.
-7. Plain language in comments and docs. No em dashes.
+7. Plain language in comments and docs. No em dashes. Python docstrings use Google style (Args, Returns, Raises), and ruff checks them.
 8. No Co-Authored-By trailer on commits.
 9. Always hand review: authorization and score visibility, migrations, anything touching scores or candidate data.
 10. The person who accepts a change owns it.
