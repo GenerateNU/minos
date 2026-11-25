@@ -36,6 +36,9 @@ playwright/.cache/
 dist/
 build/
 
+# Copies of .claude/skills made by other agent tools
+.agents/
+
 # OS and editors
 .DS_Store
 .idea/

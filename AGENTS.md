@@ -40,6 +40,10 @@ API, run from `apps/api`:
 12. Get a rough version working first, then improve it. Spike risky parts early and throw the spike away.
 13. Ask before guessing. Be specific in specs, comments and commit messages.
 
+## Git
+
+- Never force push, rewrite history or push to main without asking first.
+
 ## Testing
 
 - Before writing tests, show the human a plain-English list of cases and wait for approval.
