@@ -1,14 +1,13 @@
 # Roadmap
 
-Already done: repo setup, specs, the Socratic tutor skill, the API skeleton, and CI for the API and the web app.
+Already done: repo setup, specs, the Socratic tutor skill, the API and web app skeletons, and CI.
 
 ## Now
 
-- Web app skeleton (Next.js, Tailwind, shadcn/ui, Vitest)
+- Local Postgres (Docker) and database migrations, with Neon for the deployed database
 
 ## Next
 
-- Local Postgres and database migrations
 - Template validation, tests first, then the TL template
 - Scoring and bands, tests first
 - Score visibility rules, tests first
@@ -28,6 +27,5 @@ Already done: repo setup, specs, the Socratic tutor skill, the API skeleton, and
 ## Open questions
 
 - Where to host the API. It must support WebSockets and not sleep during an interview.
-- Neon for Postgres: leaning yes, confirm before setting it up.
 - The "what this candidate does well" line: proposed, confirm before building.
 - TL template placeholders: the PR review checklist items and the Part 2 feature.
