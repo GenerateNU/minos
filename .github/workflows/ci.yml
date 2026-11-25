@@ -17,7 +17,7 @@ jobs:
     # Same Postgres as docker-compose.yml, so migrations are checked on every PR.
     services:
       db:
-        image: postgres:17-alpine
+        image: postgres:18-alpine
         env:
           POSTGRES_USER: minos
           POSTGRES_PASSWORD: minos
