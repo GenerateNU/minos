@@ -25,7 +25,7 @@ API, run from `apps/api`:
 - Migrate: `uv run --env-file .env alembic upgrade head`
 - New migration: `uv run --env-file .env alembic revision --autogenerate -m "short description"`
 - Run: `uv run uvicorn app.main:app --reload`
-- Test: `uv run pytest`
+- Test: `uv run pytest`. Tests use `TEST_DATABASE_URL`, which defaults to Docker Postgres. They refuse to run against a neon.tech host and never use `DATABASE_URL` from `.env`.
 - Lint and format: `uv run ruff check .` and `uv run ruff format .`
 - Type check: `uv run mypy app tests`
 
