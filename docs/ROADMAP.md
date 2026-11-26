@@ -2,6 +2,27 @@
 
 Already done: repo setup, specs, the Socratic tutor skill, the API and web app skeletons, and CI.
 
+## Milestone: MVP for Chief testing
+
+In:
+
+- Template validation and the TL template
+- Scoring
+- Sessions API
+- Interviewer console
+- Debrief scorecard
+- Live shared whiteboard, with candidate session links
+- Invite links, with everyone as admin for now
+- Deploy
+
+Deferred until after testing:
+
+- Lead role and visibility rules
+- Candidate list
+- CSV export and score distribution
+
+Order: finish template validation, then a throwaway spike of the whiteboard relay (kept off main, with a short report on what we learned), then continue with the rest.
+
 ## Now
 
 - Local Postgres (Docker) and database migrations, with Neon for the deployed database
