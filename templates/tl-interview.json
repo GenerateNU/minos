@@ -1,0 +1,175 @@
+{
+  "id": "tl-interview",
+  "name": "TL interview",
+  "version": 1,
+  "scale": [
+    {"value": 1, "label": "Not yet"},
+    {"value": 2, "label": "Meets"},
+    {"value": 3, "label": "Strong"}
+  ],
+  "formats": {
+    "75": {"total_minutes": 75},
+    "90": {"total_minutes": 90}
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Intro",
+      "type": "questions",
+      "minutes": {"75": 3, "90": 5},
+      "prompt": "This is live and there is no single right answer. We care about how you think. Ask us questions any time. If you're unsure, say so."
+    },
+    {
+      "id": "pr_review",
+      "title": "Part 1: PR review",
+      "type": "checklist",
+      "minutes": {"75": 15, "90": 20},
+      "prompt": "Walk us through what you notice in the code, and what feedback you would give the member.",
+      "hints": [
+        "What happens if this input is empty or unexpected?",
+        "Does this match how the rest of the repo handles it?",
+        "Which comment would you leave first for a newer member?"
+      ],
+      "items": [
+        "TBD: PR issue 1 (obvious bug)",
+        "TBD: PR issue 2 (logic or validation bug)",
+        "TBD: PR issue 3 (design smell)",
+        "TBD: PR issue 4 (subtle issue)"
+      ],
+      "criterion_ids": ["code_review"]
+    },
+    {
+      "id": "unfamiliar_territory",
+      "title": "Part 2: Unfamiliar territory (scope, then design)",
+      "type": "whiteboard",
+      "minutes": {"75": 20, "90": 25},
+      "prompt": "TBD: Part 2 feature",
+      "hints": [
+        "Who uses this and what do they do with it?",
+        "Given your team and timeline, what ships first?",
+        "Where does the data come from and where does it live?",
+        "What happens if this step fails?",
+        "Anything about this data or the users you would handle carefully?"
+      ],
+      "criterion_ids": ["scoping", "architecture"]
+    },
+    {
+      "id": "walkthrough",
+      "title": "Part 3: Project walkthrough",
+      "type": "questions",
+      "minutes": {"75": 17, "90": 22},
+      "prompt": "Walk us through a project you built.",
+      "hints": ["Pick one request and trace it from start to finish."],
+      "items": [
+        "One full data flow end to end",
+        "How services communicate",
+        "Codebase organization",
+        "GitHub use (branching, reviews, CI)",
+        "Where the design breaks under scale",
+        "Testing",
+        "Tech stack choice",
+        "Hardest bug",
+        "What they would change"
+      ],
+      "criterion_ids": ["walkthrough_depth"]
+    },
+    {
+      "id": "behavioral",
+      "title": "Part 4: Behavioral",
+      "type": "questions",
+      "minutes": {"75": 15, "90": 15},
+      "prompt": "Younger, less experienced members will produce less than senior members. How will you ensure they feel ownership over the project?",
+      "items": [
+        "A week before a deadline you realize the team won't finish everything. How do you decide what to cut, and who do you tell?",
+        "(If time) A time you were wrong about a technical decision and someone else was right."
+      ],
+      "criterion_ids": ["member_ownership", "pressure_communication"]
+    },
+    {
+      "id": "candidate_questions",
+      "title": "Candidate questions",
+      "type": "questions",
+      "minutes": {"75": 5, "90": 3},
+      "prompt": "What questions do you have for us?"
+    }
+  ],
+  "criteria": [
+    {
+      "id": "code_review",
+      "title": "Code review",
+      "scope": "pr_review",
+      "anchors": {
+        "1": "Style nits only, misses the main bug, or feedback is vague or harsh",
+        "2": "Finds the obvious bug and one logic or validation gap, with specific and polite feedback",
+        "3": "Finds them all, ranks by impact, catches a subtle issue, and the feedback explains why and teaches"
+      }
+    },
+    {
+      "id": "scoping",
+      "title": "Scoping",
+      "scope": "unfamiliar_territory",
+      "anchors": {
+        "1": "Starts building, asks no questions",
+        "2": "Asks relevant questions, defines a first version",
+        "3": "Questions change the scope, first version fits a small student team, names what is cut"
+      }
+    },
+    {
+      "id": "architecture",
+      "title": "Architecture",
+      "scope": "unfamiliar_territory",
+      "anchors": {
+        "1": "Can't place data or services",
+        "2": "Clear pieces, data flow and storage",
+        "3": "Also names the API, a failure point, and a data or user concern (privacy, bad inputs)"
+      }
+    },
+    {
+      "id": "walkthrough_depth",
+      "title": "Walkthrough depth",
+      "scope": "walkthrough",
+      "anchors": {
+        "1": "Can't explain their own code",
+        "2": "Traces one data flow end to end",
+        "3": "Explains tradeoffs, hardest bug, and what they would change"
+      }
+    },
+    {
+      "id": "member_ownership",
+      "title": "Member ownership",
+      "scope": "behavioral",
+      "anchors": {
+        "1": "Hands out tasks, or vague \"make them feel valued\"",
+        "2": "Concrete steps, such as owning a piece end to end or real input on decisions",
+        "3": "Tailors to each person, builds real autonomy and growth, supports less experienced members"
+      }
+    },
+    {
+      "id": "pressure_communication",
+      "title": "Communication under pressure",
+      "scope": "behavioral",
+      "anchors": {
+        "1": "Hides the problem or cuts randomly",
+        "2": "Cuts by priority and tells the team",
+        "3": "Cuts by client impact, tells the PL and client early, offers a plan"
+      }
+    },
+    {
+      "id": "coachability",
+      "title": "Coachability",
+      "scope": "overall",
+      "anchors": {
+        "1": "Bluffs or gets defensive",
+        "2": "Says \"not sure\" at times, uses hints",
+        "3": "Reasons from a hint, owns gaps, adjusts mid answer"
+      }
+    }
+  ],
+  "red_flags": [
+    {"id": "harsh_feedback", "text": "Harsh or dismissive feedback to a member", "section_id": "pr_review"},
+    {"id": "no_questions", "text": "Designs a full solution without asking a question", "section_id": "unfamiliar_territory"},
+    {"id": "cannot_explain_code", "text": "Can't explain their own code, or takes all the credit and names no mistakes", "section_id": "walkthrough"},
+    {"id": "hides_problem", "text": "Hides the problem or cuts without telling anyone", "section_id": "behavioral"},
+    {"id": "states_wrong_as_fact", "text": "States something wrong as fact instead of saying \"not sure\""}
+  ]
+}
