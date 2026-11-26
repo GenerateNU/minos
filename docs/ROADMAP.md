@@ -1,6 +1,6 @@
 # Roadmap
 
-Already done: repo setup, specs, the Socratic tutor skill, the API and web app skeletons, and CI.
+Already done: repo setup, specs, the Socratic tutor skill, the API and web app skeletons, CI, local Postgres (Docker) and migrations with Neon for the deployed database, and template validation.
 
 ## Milestone: MVP for Chief testing
 
@@ -25,11 +25,10 @@ Order: finish template validation, then a throwaway spike of the whiteboard rela
 
 ## Now
 
-- Local Postgres (Docker) and database migrations, with Neon for the deployed database
+- The TL template, with a test that every template file loads
 
 ## Next
 
-- Template validation, tests first, then the TL template
 - Scoring (adding up levels), tests first
 - Score visibility rules, tests first
 - Sessions, scores and events in the API, with the generated TypeScript client
